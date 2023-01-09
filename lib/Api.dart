@@ -12,7 +12,7 @@ class Api {
           URL_BASE + "search"
               "?part=snippet"
               "&type=video"
-              "&maxResults=20"
+              "&maxResults=50"
               "&order=date"
               "&key=$CHAVE_YOUTUBE_API"
               //"&channelId=$ID_CANAL"

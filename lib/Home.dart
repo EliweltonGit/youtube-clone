@@ -1,3 +1,4 @@
+import 'package:aa_youtube_clone/CustomSearchDelegate.dart';
 import 'package:aa_youtube_clone/telas/Biblioteca.dart';
 import 'package:aa_youtube_clone/telas/EmAlta.dart';
 import 'package:aa_youtube_clone/telas/Inicio.dart';
@@ -36,6 +37,16 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.white,
         actions: [
           IconButton(
+            onPressed: () async{
+              String? res = await showSearch(
+                  context: context,
+                  delegate: CustomSearchDelegate()
+              );
+            },
+            icon: Icon(Icons.search),
+          ),
+
+          /*IconButton(
               onPressed: (){
                 print("Ação: Videocam");
               },
@@ -43,16 +54,10 @@ class _HomeState extends State<Home> {
           ),
           IconButton(
             onPressed: (){
-              print("Ação: pesquisar");
-            },
-            icon: Icon(Icons.search),
-          ),
-          IconButton(
-            onPressed: (){
               print("Ação: conta");
             },
             icon: Icon(Icons.account_circle),
-          ),
+          ),*/
         ],
       ),
       body: Container(
