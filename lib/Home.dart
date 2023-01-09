@@ -1,3 +1,7 @@
+import 'package:aa_youtube_clone/telas/Biblioteca.dart';
+import 'package:aa_youtube_clone/telas/EmAlta.dart';
+import 'package:aa_youtube_clone/telas/Inicio.dart';
+import 'package:aa_youtube_clone/telas/Inscricao.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -13,10 +17,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     List<Widget> telas = [
-      Text("Inicio"),
-      Text("Em alta"),
-      Text("Inscrições"),
-      Text("Biblioteca"),
+      Inicio(),
+      EmAlta(),
+      Inscricao(),
+      Biblioteca(),
     ];
     return Scaffold(
       appBar: AppBar(
