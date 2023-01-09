@@ -7,7 +7,7 @@ const ID_CANAL = "UCVHFbqXqoYvEWM1Ddxl0QDg";
 const URL_BASE = "https://www.googleapis.com/youtube/v3/";
 
 class Api {
-  search(String pesquisar) async {
+  Future<List<Video>?> search(String pesquisar) async {
       http.Response response = await http.get(Uri.parse(
           URL_BASE + "search"
               "?part=snippet"
@@ -27,9 +27,12 @@ class Api {
             }
         ).toList();
 
-        for (var video in videos){
+        return videos!;
+
+
+        /*for (var video in videos){
           print("Resultado: " + video.titulo!);
-        }
+        }*/
 
         /*for (var video in dadosJson["items"]){
           print("Resultado: " + video.toString());
