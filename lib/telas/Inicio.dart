@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 import '../Api.dart';
 
 class Inicio extends StatefulWidget {
-  const Inicio({Key? key}) : super(key: key);
+  //const Inicio({Key? key}) : super(key: key);
+
+  String pesquisa = "";
+  Inicio(this.pesquisa);
+
 
   @override
   State<Inicio> createState() => _InicioState();
@@ -13,9 +17,9 @@ class Inicio extends StatefulWidget {
 class _InicioState extends State<Inicio> {
 
   //Método para Listar os videps
-  _listVideos(){
+  _listVideos(String pesquisa){
     Api api = Api();
-    return api.search("");
+    return api.search(pesquisa);
   }
 
   @override
@@ -25,7 +29,7 @@ class _InicioState extends State<Inicio> {
     api.search("");
 
     return FutureBuilder<List<Video>?>(
-        future: _listVideos(),
+        future: _listVideos(widget.pesquisa),
         builder: (context, snapshot){
           switch( snapshot.connectionState){
             case ConnectionState.none :
